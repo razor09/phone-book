@@ -1,0 +1,21 @@
+@import 'src/assets/themes/options';
+
+.form-row {
+	display: flex;
+	position: relative;
+	
+	input {
+		width: 100%;
+		margin: 15px 0;
+	}
+	
+	button[type='submit'] {
+		background: $darkorange;
+		width: 15%;
+	}
+}
+
+.form-row-password {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}

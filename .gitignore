@@ -1,0 +1,6 @@
+/angular-client/node_modules
+/angular-client/dist
+/vue-client/node_modules
+/vue-client/dist/build
+/express-api/node_modules
+/express-api/dist

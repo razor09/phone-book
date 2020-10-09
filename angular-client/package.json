@@ -1,0 +1,38 @@
+{
+	"name": "angular-client",
+	"scripts": {
+		"start": "../express-api/node_modules/.bin/pm2 start server.js --name angular-client",
+		"stop": "../express-api/node_modules/.bin/pm2 delete angular-client",
+		"launch": "node server.js",
+		"dev": "ng serve",
+		"prod": "ng build --prod",
+		"update": "rm -rf node_modules && npm ci"
+	},
+	"dependencies": {
+		"@angular/animations": "10.1.5",
+		"@angular/common": "10.1.5",
+		"@angular/compiler": "10.1.5",
+		"@angular/core": "10.1.5",
+		"@angular/forms": "10.1.5",
+		"@angular/platform-browser": "10.1.5",
+		"@angular/platform-browser-dynamic": "10.1.5",
+		"@angular/router": "10.1.5",
+		"core-js": "3.6.5",
+		"font-awesome": "4.7.0",
+		"node-static": "0.7.11",
+		"rxjs": "6.6.3",
+		"socket.io-client": "2.3.1",
+		"zone.js": "0.10.3"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "0.1001.6",
+		"@angular/cli": "10.1.6",
+		"@angular/compiler-cli": "10.1.5",
+		"@angular/language-service": "10.1.5",
+		"@types/node": "14.11.7",
+		"@types/socket.io-client": "1.4.34",
+		"ts-node": "9.0.0",
+		"tslib": "2.0.2",
+		"typescript": "4.0.3"
+	}
+}

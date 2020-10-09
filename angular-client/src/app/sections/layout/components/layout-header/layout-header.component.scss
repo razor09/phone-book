@@ -1,0 +1,31 @@
+@import 'src/assets/themes/options';
+
+header {
+	display: flex;
+	height: 60px;
+	align-items: center;
+	justify-content: space-between;
+	background: $black;
+	margin-bottom: 70px;
+	padding: 0 15px;
+
+	.label {
+		color: $silver;
+		font-size: 24px;
+		transition: color $fast;
+
+		i {
+			margin-right: 10px;
+		}
+
+		&:hover {
+			color: $darkorange;
+			transition: color $fast;
+		}
+	}
+
+	button[type='button'] {
+		background: $darkslategray;
+		width: 15%;
+	}
+}

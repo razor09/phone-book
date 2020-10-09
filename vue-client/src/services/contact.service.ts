@@ -1,0 +1,60 @@
+import { Contact } from '../models';
+import { $api, $fail } from '../services';
+
+class ContactService {
+
+	public createSchema(): Contact {
+		return {
+			id: null,
+			name: null,
+			number: null,
+		};
+	}
+
+	public clearSchema(contact: Contact): void {
+		contact.name = null;
+		contact.number = null;
+	}
+
+	public async receiveContacts(): Promise<Contact[]> {
+		try {
+			return await $api.get<Contact[]>('contacts');
+		} catch {
+			throw await $fail.reject();
+		}
+	}
+
+	public async receiveContact(id: number): Promise<Contact> {
+		try {
+			return await $api.get<Contact>(`contacts/${id}`);
+		} catch {
+			throw await $fail.reject();
+		}
+	}
+
+	public async addContact(contact: Contact): Promise<void> {
+		try {
+			await $api.post<void>('contacts', contact);
+		} catch {
+			throw await $fail.reject();
+		}
+	}
+
+	public async saveContact(id: number, contact: Contact): Promise<void> {
+		try {
+			await $api.put<void>(`contacts/${id}`, contact);
+		} catch {
+			throw await $fail.reject();
+		}
+	}
+
+	public async removeContact(id: number): Promise<void> {
+		try {
+			await $api.delete<void>(`contacts/${id}`);
+		} catch {
+			throw await $fail.reject();
+		}
+	}
+}
+
+export const $contact = new ContactService();

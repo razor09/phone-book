@@ -1,0 +1,52 @@
+version: "3.8"
+
+networks:
+  contact-list-network:
+    name: contact-list-network
+
+services:
+  database:
+    build: database
+    image: contact-list-database
+    container_name: contact-list-database
+    networks:
+      - contact-list-network
+    ports:
+      - 3306:3306
+  express-api:
+    build: express-api
+    image: contact-list-express-api
+    container_name: contact-list-express-api
+    depends_on:
+      - database
+    links:
+      - database
+    networks:
+      - contact-list-network
+    ports:
+      - 3000:3000
+      - 3200:3200
+  angular-client:
+    build: angular-client
+    image: contact-list-angular-client
+    container_name: contact-list-angular-client
+    depends_on:
+      - express-api
+    links:
+      - express-api
+    networks:
+      - contact-list-network
+    ports:
+      - 4000:4000
+  vue-client:
+    build: vue-client
+    image: contact-list-vue-client
+    container_name: contact-list-vue-client
+    depends_on:
+      - express-api
+    links:
+      - express-api
+    networks:
+      - contact-list-network
+    ports:
+      - 4200:4200

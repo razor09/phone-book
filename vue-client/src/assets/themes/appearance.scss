@@ -1,0 +1,23 @@
+@import 'src/assets/themes/options';
+
+@mixin appearance($offset) {
+	
+	&-enter-active,
+	&-leave-active {
+		transition: all $fast ease;
+	}
+	
+	&-enter,
+	&-leave-to {
+		opacity: 0;
+		transform: translateX($offset);
+	}
+}
+
+.list {
+	@include appearance(-50px);
+}
+
+.notification {
+	@include appearance(50px);
+}

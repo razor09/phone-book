@@ -1,0 +1,82 @@
+@import './options';
+
+button {
+	cursor: pointer;
+	outline: 0;
+	border: 0;
+	font-family: 'Roboto';
+	font-size: 18px;
+	color: $black;
+	padding: 10px 20px;
+	opacity: 1;
+	transition: opacity $fast;
+
+	&:hover {
+		opacity: .8;
+		transition: opacity $fast;
+	}
+
+	&:link, &:visited, &:active, &:focus {
+		outline: 0;
+	}
+
+	&::-moz-focus-inner {
+		border: 0;
+	}
+
+	i {
+		margin-right: 10px;
+	}
+}
+
+input[type='text'],
+input[type='password'] {
+	font-size: 18px;
+	outline: 0;
+	border: 0;
+	height: 20px;
+	padding: 15px 10px 15px 60px;
+	border-bottom: 2px solid $black;
+	background: inherit;
+	transition: border-bottom $fast;
+
+	~ i.fa {
+		position: absolute;
+		top: 20px;
+		left: 15px;
+	}
+
+	~ label.placeholder {
+		position: absolute;
+		left: 60px;
+		top: 25px;
+		font-size: 18px;
+		pointer-events: none;
+		transition: all $fast ease;
+	}
+
+	&::placeholder {
+		color: transparent;
+	}
+	
+	&:focus ~ label.placeholder,
+	&:not(:placeholder-shown) ~ label.placeholder {
+		top: 5px;
+		font-size: 16px;
+		color: $darkslategray;
+	}
+
+	&:focus {
+		border-bottom: 2px solid $darkorange;
+		transition: border-bottom $fast;
+	}
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+	font-size: 70px;
+}

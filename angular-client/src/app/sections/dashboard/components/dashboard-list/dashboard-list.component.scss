@@ -1,0 +1,79 @@
+@import 'src/assets/themes/options';
+
+.search {
+	display: flex;
+	position: relative;
+
+	input {
+		width: 100%;
+		margin: 15px 0;
+	}
+}
+
+.create-form {
+	margin: 30px 0;
+
+	.form-row {
+		display: flex;
+		justify-content: space-between;
+		margin: 10px 0;
+
+		.row-column {
+			display: flex;
+			position: relative;
+			width: 45%;
+
+			input {
+				width: 100%;
+				margin: 15px 0;
+			}
+		}
+	}
+
+	.button-group {
+		display: flex;
+
+		button[type='submit'] {
+			background: $darkgreen;
+			width: 20%;
+		}
+
+		button[type='reset'] {
+			background: $darkred;
+			width: 25%;
+		}
+	}
+}
+
+.table {
+	height: 240px;
+	overflow: auto;
+}
+
+.table-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+
+	.row-column {
+		display: flex;
+		width: 25%;
+		font-size: 16px;
+	}
+
+	.button-group {
+		display: flex;
+		width: 45%;
+
+		button[type='button'].edit-button {
+			width: 40%;
+			background: $darkorange;
+		}
+
+		button[type='button'].remove-button {
+			width: 60%;
+			background: $darkred;
+		}
+	}
+}

@@ -1,0 +1,83 @@
+<section id="dashboard-list">
+	<div class="search">
+		<input
+			type="text"
+			placeholder="Search"
+			v-model="query"
+			@input="search"
+		>
+		<i class="fa fa-search fa-2x"></i>
+		<label class="placeholder">Search</label>
+	</div>
+	<form
+		id="dashboard-list-create-form"
+		class="create-form"
+		@submit.prevent="addContact()"
+	>
+		<div class="form-row">
+			<div class="form-row-column">
+				<input
+					type="text"
+					placeholder="Name"
+					v-model="contact.name"
+				>
+				<i class="fa fa-user fa-2x"></i>
+				<label class="placeholder">Name</label>
+			</div>
+			<div class="form-row-column">
+				<input
+					type="text"
+					placeholder="Number"
+					v-model="contact.number"
+				>
+				<i class="fa fa-phone fa-2x"></i>
+				<label class="placeholder">Number</label>
+			</div>
+		</div>
+		<div class="button-group">
+			<button type="submit">
+				<i class="fa fa-plus"></i>
+				<span>Add</span>
+			</button>
+			<button
+				type="button"
+				@click="clearSchema()"
+			>
+				<i class="fa fa-paint-brush"></i>
+				<span>Clear</span>
+			</button>
+		</div>
+	</form>
+	<div class="table">
+		<transition-group name="list">
+			<div
+				class="table-row"
+				v-for="contact in contacts"
+				:key="contact.id"
+			>
+				<div class="table-row-column">{{ contact.name }}</div>
+				<div class="table-row-column">{{ contact.number }}</div>
+				<div class="button-group">
+					<router-link
+						class="edit-button"
+						tag="button"
+						:to="{
+							name: 'edit',
+							params: { id: contact.id },
+						}"
+					>
+						<i class="fa fa-pencil-square-o"></i>
+						<span>Edit</span>
+					</router-link>
+					<button
+						class="remove-button"
+						@click="removeContact(contact.id)"
+					>
+						<i class="fa fa-times"></i>
+						<span>Remove</span>
+					</button>
+				</div>
+			</div>
+		</transition-group>
+	</div>
+</section>

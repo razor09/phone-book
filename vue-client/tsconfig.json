@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "es2020",
+		"moduleResolution": "node",
+		"experimentalDecorators": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"lib": [
+			"es2020",
+			"dom"
+		]
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
