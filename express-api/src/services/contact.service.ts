@@ -26,20 +26,20 @@ class ContactService {
 		});
 	}
 
-	public addContact(request: Request, response: Response): void {
+	public createContact(request: Request, response: Response): void {
 		const contact = utils.removeTags<Contact>(request.body);
 		const sql = 'INSERT INTO contacts SET ?';
 		mysql.query(sql, contact, (error) => {
 			if (!!error) {
 				response.status(Status.InternalServerError).end();
 			} else {
-				socket.emit(Message.Add);
+				socket.emit(Message.Create);
 				response.end();
 			}
 		});
 	}
 
-	public saveContact(request: Request, response: Response): void {
+	public updateContact(request: Request, response: Response): void {
 		const contact = utils.removeTags<Contact>(request.body);
 		const id = utils.toInteger(request.params.id);
 		const sql = 'UPDATE contacts SET ? WHERE id = ?';
@@ -47,7 +47,7 @@ class ContactService {
 			if (!!error) {
 				response.status(Status.InternalServerError).end();
 			} else {
-				socket.emit(Message.Save);
+				socket.emit(Message.Update);
 				response.end();
 			}
 		});

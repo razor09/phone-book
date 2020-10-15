@@ -5,8 +5,8 @@ export const router = Router()
 
 .post(
 	'/login',
-	$.guard.unauthorized.bind($.guard),
-	$.guard.jsonified.bind($.guard),
+	$.access.unauthorized.bind($.access),
+	$.access.jsonified.bind($.access),
 	$.auth.login.bind($.auth),
 )
 
@@ -17,38 +17,38 @@ export const router = Router()
 
 .delete(
 	'/logout',
-	$.guard.authorized.bind($.guard),
+	$.access.authorized.bind($.access),
 	$.auth.logout.bind($.auth),
 )
 
 .get(
 	'/contacts',
-	$.guard.authorized.bind($.guard),
+	$.access.authorized.bind($.access),
 	$.contact.receiveContacts.bind($.contact),
 )
 
 .get(
 	'/contacts/:id',
-	$.guard.authorized.bind($.guard),
+	$.access.authorized.bind($.access),
 	$.contact.receiveContact.bind($.contact),
 )
 
 .post(
 	'/contacts',
-	$.guard.authorized.bind($.guard),
-	$.guard.jsonified.bind($.guard),
-	$.contact.addContact.bind($.contact),
+	$.access.authorized.bind($.access),
+	$.access.jsonified.bind($.access),
+	$.contact.createContact.bind($.contact),
 )
 
 .put(
 	'/contacts/:id',
-	$.guard.authorized.bind($.guard),
-	$.guard.jsonified.bind($.guard),
-	$.contact.saveContact.bind($.contact),
+	$.access.authorized.bind($.access),
+	$.access.jsonified.bind($.access),
+	$.contact.updateContact.bind($.contact),
 )
 
 .delete(
 	'/contacts/:id',
-	$.guard.authorized.bind($.guard),
+	$.access.authorized.bind($.access),
 	$.contact.removeContact.bind($.contact),
 );

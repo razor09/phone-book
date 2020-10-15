@@ -50,3 +50,15 @@ services:
       - contact-list-network
     ports:
       - 4200:4200
+  react-client:
+    build: react-client
+    image: contact-list-react-client
+    container_name: contact-list-react-client
+    depends_on:
+      - express-api
+    links:
+      - express-api
+    networks:
+      - contact-list-network
+    ports:
+      - 4400:4400

@@ -28,11 +28,11 @@ export class ContactService {
 		return this.api.get<Contact>(`contacts/${id}`);
 	}
 
-	public addContact(contact: Contact): Observable<void> {
+	public createContact(contact: Contact): Observable<void> {
 		return this.api.post<void>('contacts', contact);
 	}
 
-	public saveContact(id: number, contact: Contact): Observable<void> {
+	public updateContact(id: number, contact: Contact): Observable<void> {
 		return this.api.put<void>(`contacts/${id}`, contact);
 	}
 

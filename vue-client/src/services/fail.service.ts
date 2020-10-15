@@ -1,9 +1,9 @@
-import { $router } from '../services';
+import { $store } from '../store';
 
 class FailService {
 
 	public reject(): Promise<never> {
-		$router.navigate('/error');
+		$store.setError();
 		return Promise.reject();
 	}
 }

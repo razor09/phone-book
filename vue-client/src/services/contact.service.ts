@@ -5,7 +5,6 @@ class ContactService {
 
 	public createSchema(): Contact {
 		return {
-			id: null,
 			name: null,
 			number: null,
 		};
@@ -32,7 +31,7 @@ class ContactService {
 		}
 	}
 
-	public async addContact(contact: Contact): Promise<void> {
+	public async createContact(contact: Contact): Promise<void> {
 		try {
 			await $api.post<void>('contacts', contact);
 		} catch {
@@ -40,7 +39,7 @@ class ContactService {
 		}
 	}
 
-	public async saveContact(id: number, contact: Contact): Promise<void> {
+	public async updateContact(id: number, contact: Contact): Promise<void> {
 		try {
 			await $api.put<void>(`contacts/${id}`, contact);
 		} catch {

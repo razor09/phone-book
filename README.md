@@ -16,13 +16,15 @@ The easiest and fastest way to launch the application is to run:
 make up
 ```
 
-This will create four containers with database, API and two clients, located at the following addresses:
+This will create five containers with database, API and three clients, located at the following addresses:
 
 `express-api` - **localhost:3000**
 
 `angular-client` - **localhost:4000**
 
 `vue-client` - **localhost:4200**
+
+`react-client` - **localhost:4400**
 
 On the login page enter the following credentials:
 

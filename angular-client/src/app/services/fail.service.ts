@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
+import { Store } from '../store';
 
 @Injectable({
 	providedIn: 'root',
@@ -9,11 +9,11 @@ import { Observable, throwError } from 'rxjs';
 export class FailService {
 
 	constructor(
-		private router: Router,
+		private store: Store,
 	) {}
 
 	public throw(response: HttpErrorResponse): Observable<never> {
-		this.router.navigateByUrl('error');
+		this.store.broken();
 		return throwError(response);
 	}
 }

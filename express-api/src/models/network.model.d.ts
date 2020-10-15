@@ -1,6 +1,6 @@
 export const enum Message {
-	Add ='[message]:add-contact',
-	Save = '[message]:save-contact',
+	Create = '[message]:create-contact',
+	Update = '[message]:update-contact',
 	Remove = '[message]:remove-contact',
 }
 

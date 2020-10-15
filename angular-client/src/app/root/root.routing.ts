@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
+import { links } from '../components';
 import { guards } from '../guards';
-import { links } from '../sections';
 
 export const RootRouting = RouterModule.forRoot([
 	{
@@ -23,17 +23,13 @@ export const RootRouting = RouterModule.forRoot([
 					},
 					{
 						path: ':id',
-						component: links.DashboardEdit,
+						component: links.DashboardUpdate,
 					},
 				],
 			},
 			{
-				path: 'error',
-				component: links.ErrorContainer,
-			},
-			{
 				path: '**',
-				component: links.NotFoundContainer,
+				redirectTo: '',
 			},
 		],
 	},

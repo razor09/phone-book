@@ -5,8 +5,8 @@ class Files {
 		return require('../root/root.template');
 	}
 
-	public insert(section: string, component: string): string {
-		const path = `sections/${section}/components/${component}/${component}`;
+	public insert(component: string): string {
+		const path = `components/${component}/${component}`;
 		try {
 			require(`../${path}.style`);
 		} finally {

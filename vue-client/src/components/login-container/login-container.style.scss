@@ -1,0 +1,25 @@
+@import 'src/assets/themes/options';
+
+#login-container {
+	form {
+		:nth-child(2) {
+			&.form-row {
+				margin-top: 30px;
+			}
+		}
+
+		.form-row {
+			display: flex;
+			position: relative;
+
+			input {
+				width: 100%;
+				margin: 15px 0;
+			}
+
+			button[type='submit'] {
+				background: $darkorange;
+			}
+		}
+	}
+}

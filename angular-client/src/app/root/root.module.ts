@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { components, root } from '../components';
 import { pipes } from '../pipes';
-import { components, root } from '../sections';
 import { core } from './root.core';
 
 @NgModule({

@@ -1,32 +1,32 @@
 import { utils } from '../libs';
-import { Color, Notification, Text } from '../models';
+import { Color, Notification, Text, Title } from '../models';
 
 class Store {
 
 	public inProgress = false;
 	public isAuth = false;
-	public text: Text = 'Login';
+	public isError = false;
+	public title: Title = 'Login';
 	public notifications = new Array<Notification>();
 
 	public authorized(): void {
 		this.isAuth = true;
-		this.text = 'Dashboard';
+		this.setTitle('Dashboard');
 	}
 
 	public unauthorized(): void {
 		this.isAuth = false;
-		this.text = 'Login';
+		this.setTitle('Login');
 	}
 
-	public notify(text: string, color: Color): void {
-		const id = Symbol();
-		this.notifications.push({ id, text, color });
-		utils.delay(() => {
-			this.notifications.shift();
-		});
+	public setError(): void {
+		this.isAuth = false;
+		this.isError = true;
+		this.setTitle('Error');
 	}
 
-	public setTitle(title: string): void {
+	private setTitle(title: Title): void {
+		this.title = title;
 		self.document.title = title;
 	}
 
@@ -34,16 +34,12 @@ class Store {
 		this.inProgress = progress;
 	}
 
-	public setError(): void {
-		this.isAuth = false;
-		this.text = 'Error';
-		this.setTitle(this.text);
-	}
-
-	public setNotFound(): void {
-		this.isAuth = false;
-		this.text = '404 Not Found';
-		this.setTitle(this.text);
+	public notify(text: Text, color: Color): void {
+		const id = Symbol();
+		this.notifications.push({ id, text, color });
+		utils.delay(() => {
+			this.notifications.shift();
+		});
 	}
 }
 

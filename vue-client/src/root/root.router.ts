@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import * as sections from '../sections';
+import * as links from '../components';
 import { $access } from '../services';
 
 Vue.use(VueRouter);
@@ -9,37 +9,33 @@ export const router = new VueRouter({
 	mode: 'history',
 	routes: [
 		{
-			path: '',
-			component: sections.LayoutContainer,
+			path: '/',
+			component: links.LayoutContainer,
 			children: [
 				{
-					path: '',
-					component: sections.LoginContainer,
+					path: '/',
+					component: links.LoginContainer,
 					beforeEnter: $access.unauthorized,
 				},
 				{
-					path: 'contacts',
-					component: sections.DashboardContainer,
+					path: '/contacts',
+					component: links.DashboardContainer,
 					beforeEnter: $access.authorized,
 					children: [
 						{
-							path: '',
-							component: sections.DashboardList,
+							path: '/',
+							component: links.DashboardList,
 						},
 						{
-							path: ':id',
+							path: '/:id',
 							name: 'edit',
-							component: sections.DashboardEdit,
+							component: links.DashboardUpdate,
 						},
 					],
 				},
 				{
-					path: 'error',
-					component: sections.ErrorContainer,
-				},
-				{
 					path: '*',
-					component: sections.NotFoundContainer,
+					redirect: '/',
 				},
 			],
 		},

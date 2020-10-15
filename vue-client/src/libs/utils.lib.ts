@@ -33,16 +33,13 @@ class Utils {
 			.result() || 0;
 	}
 
-	public resetForm(selector: string): void {
-		const form = document.getElementById(selector);
-		if (form instanceof HTMLFormElement) {
-			form.reset();
-			Array.from(form.elements).forEach((element) => {
-				if (element instanceof HTMLInputElement) {
-					element.blur();
-				}
-			});
-		}
+	public resetForm(form: HTMLFormElement): void {
+		form.reset();
+		Array.from(form.elements).forEach((element) => {
+			if (element instanceof HTMLInputElement) {
+				element.blur();
+			}
+		});
 	}
 
 	public delay(callback: Function): void {

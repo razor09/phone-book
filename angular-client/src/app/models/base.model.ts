@@ -1,5 +1,3 @@
-export type Color = 'darkred' | 'darkorange' | 'darkgreen';
-
 export type Property = string | number | bigint | boolean | undefined | object | symbol | Function;
 
 export interface Pipe<T> {

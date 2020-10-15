@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { Auth } from '../models';
-import { Store } from '../store';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -13,7 +11,6 @@ export class AuthService {
 
 	constructor(
 		private api: ApiService,
-		private store: Store,
 	) {}
 
 	public buildForm(): FormGroup {
@@ -28,9 +25,7 @@ export class AuthService {
 	}
 
 	public checkAuth(): Observable<boolean> {
-		return this.api.get<boolean>('check').pipe(
-			tap((isAuth) => this.store.setAuthStatus(isAuth)),
-		);
+		return this.api.get<boolean>('check');
 	}
 
 	public logout(): Observable<void> {
