@@ -9,7 +9,7 @@ export class Utils {
 
   constructor(
     private helpers: Helpers,
-  ) { }
+  ) {}
 
   public compose<T>(value: T): Pipe<T> {
     return {
