@@ -1,36 +1,36 @@
 {
-	"name": "vue-client",
-	"scripts": {
-		"start": "../express-api/node_modules/.bin/pm2 start server.js --name vue-client",
-		"stop": "../express-api/node_modules/.bin/pm2 delete vue-client",
-		"launch": "node server.js",
-		"dev": "webpack-dev-server --progress --mode=development",
-		"prod": "rm -rf dist/build && webpack-cli --progress --mode=production",
-		"update": "rm -rf node_modules && npm ci"
-	},
-	"dependencies": {
-		"font-awesome": "4.7.0",
-		"node-static": "0.7.11",
-		"socket.io-client": "2.3.1",
-		"vue": "2.6.12",
-		"vue-class-component": "7.2.6",
-		"vue-router": "3.4.6"
-	},
-	"devDependencies": {
-		"@types/node": "14.11.7",
-		"@types/socket.io-client": "1.4.34",
-		"css-loader": "4.3.0",
-		"file-loader": "6.1.0",
-		"html-loader": "1.3.1",
-		"mini-css-extract-plugin": "0.12.0",
-		"node-sass": "4.14.1",
-		"optimize-css-assets-webpack-plugin": "5.0.4",
-		"sass-loader": "10.0.2",
-		"ts-loader": "8.0.4",
-		"typescript": "4.0.3",
-		"url-loader": "4.1.0",
-		"webpack": "4.44.2",
-		"webpack-cli": "3.3.12",
-		"webpack-dev-server": "3.11.0"
-	}
+  "name": "vue-client",
+  "scripts": {
+    "start": "../express-api/node_modules/.bin/pm2 start server.js --name vue-client",
+    "stop": "../express-api/node_modules/.bin/pm2 delete vue-client",
+    "launch": "node server.js",
+    "dev": "webpack-dev-server --progress --mode=development",
+    "prod": "rm -rf dist/build && webpack-cli --progress --mode=production",
+    "update": "rm -rf node_modules && npm ci"
+  },
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "node-static": "0.7.11",
+    "socket.io-client": "2.3.1",
+    "vue": "2.6.12",
+    "vue-class-component": "7.2.6",
+    "vue-router": "3.4.6"
+  },
+  "devDependencies": {
+    "@types/node": "14.11.7",
+    "@types/socket.io-client": "1.4.34",
+    "css-loader": "4.3.0",
+    "file-loader": "6.1.0",
+    "html-loader": "1.3.1",
+    "mini-css-extract-plugin": "0.12.0",
+    "node-sass": "4.14.1",
+    "optimize-css-assets-webpack-plugin": "5.0.4",
+    "sass-loader": "10.0.2",
+    "ts-loader": "8.0.4",
+    "typescript": "4.0.3",
+    "url-loader": "4.1.0",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
 }

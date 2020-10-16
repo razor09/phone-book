@@ -1,17 +1,17 @@
 @import './options';
 
 @font-face {
-	font-family: 'Roboto';
-	src: url('../fonts/Roboto/Roboto-Regular.ttf');
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto/Roboto-Regular.ttf');
 }
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	background: $gainsboro;
-	font-family: 'Roboto';
-	user-select: none;
+  background: $gainsboro;
+  font-family: 'Roboto';
+  user-select: none;
 }

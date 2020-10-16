@@ -1,32 +1,32 @@
 @import 'src/assets/themes/options';
 
 @mixin appearance($offset) {
-	&-enter {
-		opacity: 0;
-		transform: translateX($offset);
-	}
+  &-enter {
+    opacity: 0;
+    transform: translateX($offset);
+  }
 
-	&-enter-active {
-		opacity: 1;
-		transform: translateX(0);
-		transition: all $fast ease;
-	}
+  &-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all $fast ease;
+  }
 
-	&-exit {
-		opacity: 1;
-	}
+  &-exit {
+    opacity: 1;
+  }
 
-	&-exit-active {
-		opacity: 0;
-		transform: translateX($offset);
-		transition: all $fast ease;
-	}
+  &-exit-active {
+    opacity: 0;
+    transform: translateX($offset);
+    transition: all $fast ease;
+  }
 }
 
 .list {
-	@include appearance(-50px);
+  @include appearance(-50px);
 }
 
 .notification {
-	@include appearance(50px);
+  @include appearance(50px);
 }

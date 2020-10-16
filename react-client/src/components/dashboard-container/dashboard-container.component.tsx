@@ -8,51 +8,51 @@ import { DashboardList } from '../dashboard-list/dashboard-list.component';
 import { DashboardEdit } from '../dashboard-update/dashboard-update.component';
 
 interface StateProps {
-	status: AuthStatus;
+  status: AuthStatus;
 }
 
 type Props = StateProps & RouteComponentProps & DispatchProp;
 
 export class InferableComponent extends React.Component<Props> {
 
-	public render(): JSX.Element {
-		const { status } = this.props;
-		switch (status) {
-			case 'authorized': return this.display();
-			case 'unauthorized': return this.redirect();
-			default: return null;
-		}
-	}
+  public render(): JSX.Element {
+    const { status } = this.props;
+    switch (status) {
+      case 'authorized': return this.display();
+      case 'unauthorized': return this.redirect();
+      default: return null;
+    }
+  }
 
-	private display(): JSX.Element {
-		const { path } = this.props.match;
-		return (
-			<Switch>
-				<Route
-					exact
-					path={path}
-					component={DashboardList}
-				></Route>
-				<Route
-					exact
-					path={`${path}/:id`}
-					component={DashboardEdit}
-				></Route>
-			</Switch>
-		);
-	}
+  private display(): JSX.Element {
+    const { path } = this.props.match;
+    return (
+      <Switch>
+        <Route
+          exact
+          path={path}
+          component={DashboardList}
+        ></Route>
+        <Route
+          exact
+          path={`${path}/:id`}
+          component={DashboardEdit}
+        ></Route>
+      </Switch>
+    );
+  }
 
-	private redirect(): JSX.Element {
-		return (
-			<Redirect to="/"></Redirect>
-		);
-	}
+  private redirect(): JSX.Element {
+    return (
+      <Redirect to="/"></Redirect>
+    );
+  }
 }
 
 export const DashboardContainer = utils.compose(InferableComponent)
-	.pipe(connect<StateProps, object, object, GlobalState>((state) => {
-		return {
-			status: state.authReducer.status,
-		};
-	}))
-	.result();
+  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+    return {
+      status: state.authReducer.status,
+    };
+  }))
+  .result();

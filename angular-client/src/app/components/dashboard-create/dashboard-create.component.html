@@ -1,36 +1,36 @@
 <form
-	#formRef
-	(submit)="createContact()"
-	[formGroup]="createForm"
+  #formRef
+  (submit)="createContact()"
+  [formGroup]="createForm"
 >
-	<div class="form-row">
-		<div class="row-column">
-			<input
-				type="text"
-				placeholder="Name"
-				formControlName="name"
-			>
-			<i class="fa fa-user fa-2x"></i>
-			<label class="placeholder">Name</label>
-		</div>
-		<div class="row-column">
-			<input
-				type="text"
-				placeholder="Number"
-				formControlName="number"
-			>
-			<i class="fa fa-phone fa-2x"></i>
-			<label class="placeholder">Number</label>
-		</div>
-	</div>
-	<div class="button-group">
-		<button type="submit">
-			<i class="fa fa-plus"></i>
-			<span>Create</span>
-		</button>
-		<button type="reset">
-			<i class="fa fa-paint-brush"></i>
-			<span>Clear</span>
-		</button>
-	</div>
+  <div class="form-row">
+    <div class="row-column">
+      <input
+        type="text"
+        placeholder="Name"
+        formControlName="name"
+      >
+      <i class="fa fa-user fa-2x"></i>
+      <label class="placeholder">Name</label>
+    </div>
+    <div class="row-column">
+      <input
+        type="text"
+        placeholder="Number"
+        formControlName="number"
+      >
+      <i class="fa fa-phone fa-2x"></i>
+      <label class="placeholder">Number</label>
+    </div>
+  </div>
+  <div class="button-group">
+    <button type="submit">
+      <i class="fa fa-plus"></i>
+      <span>Create</span>
+    </button>
+    <button type="reset">
+      <i class="fa fa-paint-brush"></i>
+      <span>Clear</span>
+    </button>
+  </div>
 </form>

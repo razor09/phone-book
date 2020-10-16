@@ -6,22 +6,22 @@ import { AuthService } from '../services';
 import { Store } from '../store';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class Unauthorized implements CanActivate {
 
-	constructor(
-		private router: Router,
-		private authService: AuthService,
-		private store: Store,
-	) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private store: Store,
+  ) {}
 
-	public canActivate(): Observable<boolean> {
-		return this.authService.checkAuth().pipe(
-			tap((isAuth) => {
-				isAuth ? this.router.navigateByUrl('contacts') : this.store.unauthorized();
-			}),
-			map((isAuth) => !isAuth),
-		);
-	}
+  public canActivate(): Observable<boolean> {
+    return this.authService.checkAuth().pipe(
+      tap((isAuth) => {
+        isAuth ? this.router.navigateByUrl('contacts') : this.store.unauthorized();
+      }),
+      map((isAuth) => !isAuth),
+    );
+  }
 }

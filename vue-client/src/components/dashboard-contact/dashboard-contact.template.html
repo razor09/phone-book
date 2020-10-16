@@ -1,24 +1,24 @@
 <section id="dashboard-contact">
-	<div class="table-row-column">{{ contact.name }}</div>
-	<div class="table-row-column">{{ contact.number }}</div>
-	<div class="button-group">
-		<router-link
-			class="edit-button"
-			tag="button"
-			:to="{
-				name: 'edit',
-				params: { id: contact.id },
-			}"
-		>
-			<i class="fa fa-pencil-square-o"></i>
-			<span>Edit</span>
-		</router-link>
-		<button
-			class="remove-button"
-			@click="removeContact(contact.id)"
-		>
-			<i class="fa fa-times"></i>
-			<span>Remove</span>
-		</button>
-	</div>
+  <div class="table-row-column">{{ contact.name }}</div>
+  <div class="table-row-column">{{ contact.number }}</div>
+  <div class="button-group">
+    <router-link
+      class="edit-button"
+      tag="button"
+      :to="{
+        name: 'edit',
+        params: { id: contact.id },
+      }"
+    >
+      <i class="fa fa-pencil-square-o"></i>
+      <span>Edit</span>
+    </router-link>
+    <button
+      class="remove-button"
+      @click="removeContact(contact.id)"
+    >
+      <i class="fa fa-times"></i>
+      <span>Remove</span>
+    </button>
+  </div>
 </section>

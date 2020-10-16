@@ -1,17 +1,17 @@
 <div class="search">
-	<input
-		type="text"
-		name="query"
-		placeholder="Search"
-		[(ngModel)]="query"
-	>
-	<i class="fa fa-search fa-2x"></i>
-	<label class="placeholder">Search</label>
+  <input
+    type="text"
+    name="query"
+    placeholder="Search"
+    [(ngModel)]="query"
+  >
+  <i class="fa fa-search fa-2x"></i>
+  <label class="placeholder">Search</label>
 </div>
 <dashboard-create></dashboard-create>
 <div class="table">
-	<dashboard-contact
-		*ngFor="let contact of contacts | search: query; trackBy: trackById"
-		[contact]="contact"
-	></dashboard-contact>
+  <dashboard-contact
+    *ngFor="let contact of contacts | search: query; trackBy: trackById"
+    [contact]="contact"
+  ></dashboard-contact>
 </div>

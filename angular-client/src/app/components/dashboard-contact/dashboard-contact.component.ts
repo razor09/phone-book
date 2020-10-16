@@ -5,22 +5,22 @@ import { ContactService } from '../../services';
 import { Store } from '../../store';
 
 @Component({
-	selector: 'dashboard-contact',
-	templateUrl: 'dashboard-contact.component.html',
-	styleUrls: ['dashboard-contact.component.scss'],
+  selector: 'dashboard-contact',
+  templateUrl: 'dashboard-contact.component.html',
+  styleUrls: ['dashboard-contact.component.scss'],
 })
 export class DashboardContact {
 
-	@Input() public contact: Contact;
+  @Input() public contact: Contact;
 
-	constructor(
-		private $contact: ContactService,
-		private store: Store,
-	) {}
+  constructor(
+    private $contact: ContactService,
+    private store: Store,
+  ) {}
 
-	public removeContact(id: number): void {
-		this.$contact.removeContact(id).pipe(first()).subscribe(() => {
-			this.store.notify('Removed', 'darkred');
-		});
-	}
+  public removeContact(id: number): void {
+    this.$contact.removeContact(id).pipe(first()).subscribe(() => {
+      this.store.notify('Removed', 'darkred');
+    });
+  }
 }

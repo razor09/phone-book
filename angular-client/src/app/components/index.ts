@@ -10,24 +10,24 @@ import { LayoutPreloader } from './layout-preloader/layout-preloader.component';
 import { LoginContainer } from './login-container/login-container.component';
 
 export const components = [
-	RootContainer,
-	DashboardContact,
-	DashboardContainer,
-	DashboardCreate,
-	DashboardList,
-	DashboardUpdate,
-	LayoutContainer,
-	LayoutHeader,
-	LayoutPreloader,
-	LoginContainer,
+  RootContainer,
+  DashboardContact,
+  DashboardContainer,
+  DashboardCreate,
+  DashboardList,
+  DashboardUpdate,
+  LayoutContainer,
+  LayoutHeader,
+  LayoutPreloader,
+  LoginContainer,
 ];
 
 export const links = {
-	DashboardContainer,
-	DashboardList,
-	DashboardUpdate,
-	LayoutContainer,
-	LoginContainer,
+  DashboardContainer,
+  DashboardList,
+  DashboardUpdate,
+  LayoutContainer,
+  LoginContainer,
 };
 
 export const root = RootContainer;

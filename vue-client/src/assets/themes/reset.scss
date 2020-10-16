@@ -1,18 +1,18 @@
 @import 'src/assets/themes/options';
 
 @font-face {
-	font-family: 'Roboto';
-	src: url('fonts/Roboto/Roboto-Regular.ttf');
+  font-family: 'Roboto';
+  src: url('fonts/Roboto/Roboto-Regular.ttf');
 }
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: 'Roboto';
-	background: $gainsboro;
-	min-width: 1024px;
-	user-select: none;
+  font-family: 'Roboto';
+  background: $gainsboro;
+  min-width: 1024px;
+  user-select: none;
 }

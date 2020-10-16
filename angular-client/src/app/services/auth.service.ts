@@ -5,30 +5,30 @@ import { Auth } from '../models';
 import { ApiService } from './api.service';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class AuthService {
 
-	constructor(
-		private api: ApiService,
-	) {}
+  constructor(
+    private api: ApiService,
+  ) {}
 
-	public buildForm(): FormGroup {
-		return new FormGroup({
-			user: new FormControl('', Validators.required),
-			password: new FormControl('', Validators.required),
-		});
-	}
+  public buildForm(): FormGroup {
+    return new FormGroup({
+      user: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
+  }
 
-	public login(auth: Auth): Observable<boolean> {
-		return this.api.post<boolean>('login', auth);
-	}
+  public login(auth: Auth): Observable<boolean> {
+    return this.api.post<boolean>('login', auth);
+  }
 
-	public checkAuth(): Observable<boolean> {
-		return this.api.get<boolean>('check');
-	}
+  public checkAuth(): Observable<boolean> {
+    return this.api.get<boolean>('check');
+  }
 
-	public logout(): Observable<void> {
-		return this.api.delete<void>('logout');
-	}
+  public logout(): Observable<void> {
+    return this.api.delete<void>('logout');
+  }
 }

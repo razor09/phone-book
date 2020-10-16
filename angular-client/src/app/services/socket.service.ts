@@ -3,9 +3,9 @@ import * as socket from 'socket.io-client';
 import { Config } from '../models';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class SocketService {
 
-	public client = socket(Config.SocketBaseUrl);
+  public client = socket(Config.SocketBaseUrl);
 }

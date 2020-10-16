@@ -1,43 +1,43 @@
 {
-	"name": "react-client",
-	"scripts": {
-		"start": "../express-api/node_modules/.bin/pm2 start server.js --name react-client",
-		"stop": "../express-api/node_modules/.bin/pm2 delete react-client",
-		"launch": "node server.js",
-		"dev": "webpack-dev-server --progress --mode=development",
-		"prod": "rm -rf dist/build && webpack-cli --progress --mode=production",
-		"update": "rm -rf node_modules && npm ci"
-	},
-	"dependencies": {
-		"font-awesome": "4.7.0",
-		"node-static": "0.7.11",
-		"react": "16.13.1",
-		"react-dom": "16.13.1",
-		"react-redux": "7.2.1",
-		"react-router-dom": "5.2.0",
-		"react-transition-group": "4.4.1",
-		"redux": "4.0.5",
-		"socket.io-client": "2.3.1"
-	},
-	"devDependencies": {
-		"@types/node": "14.11.8",
-		"@types/react": "16.9.52",
-		"@types/react-dom": "16.9.8",
-		"@types/react-redux": "7.1.9",
-		"@types/react-router-dom": "5.1.6",
-		"@types/react-transition-group": "4.4.0",
-		"@types/socket.io-client": "1.4.34",
-		"css-loader": "4.3.0",
-		"file-loader": "6.1.1",
-		"mini-css-extract-plugin": "1.0.0",
-		"node-sass": "4.14.1",
-		"optimize-css-assets-webpack-plugin": "5.0.4",
-		"sass-loader": "10.0.3",
-		"ts-loader": "8.0.5",
-		"typescript": "4.0.3",
-		"url-loader": "4.1.1",
-		"webpack": "4.44.2",
-		"webpack-cli": "3.3.12",
-		"webpack-dev-server": "3.11.0"
-	}
+  "name": "react-client",
+  "scripts": {
+    "start": "../express-api/node_modules/.bin/pm2 start server.js --name react-client",
+    "stop": "../express-api/node_modules/.bin/pm2 delete react-client",
+    "launch": "node server.js",
+    "dev": "webpack-dev-server --progress --mode=development",
+    "prod": "rm -rf dist/build && webpack-cli --progress --mode=production",
+    "update": "rm -rf node_modules && npm ci"
+  },
+  "dependencies": {
+    "font-awesome": "4.7.0",
+    "node-static": "0.7.11",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "react-transition-group": "4.4.1",
+    "redux": "4.0.5",
+    "socket.io-client": "2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "14.11.8",
+    "@types/react": "16.9.52",
+    "@types/react-dom": "16.9.8",
+    "@types/react-redux": "7.1.9",
+    "@types/react-router-dom": "5.1.6",
+    "@types/react-transition-group": "4.4.0",
+    "@types/socket.io-client": "1.4.34",
+    "css-loader": "4.3.0",
+    "file-loader": "6.1.1",
+    "mini-css-extract-plugin": "1.0.0",
+    "node-sass": "4.14.1",
+    "optimize-css-assets-webpack-plugin": "5.0.4",
+    "sass-loader": "10.0.3",
+    "ts-loader": "8.0.5",
+    "typescript": "4.0.3",
+    "url-loader": "4.1.1",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
 }

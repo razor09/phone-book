@@ -15,47 +15,47 @@ type Props = RouteComponentProps & DispatchProp;
 
 class InferableComponent extends React.Component<Props> {
 
-	public render(): JSX.Element {
-		return (
-			<section id="layout-container">
-				<LayoutHeader></LayoutHeader>
-				<LayoutPreloader></LayoutPreloader>
-				<LayoutNotifications></LayoutNotifications>
-				<div className="outlet">
-					<Switch>
-						<Route
-							exact
-							path="/"
-							component={LoginContainer}
-						></Route>
-						<Route
-							path="/contacts"
-							component={DashboardContainer}
-						></Route>
-						<Route path="*">
-							<Redirect to="/"></Redirect>
-						</Route>
-					</Switch>
-				</div>
-			</section>
-		);
-	}
+  public render(): JSX.Element {
+    return (
+      <section id="layout-container">
+        <LayoutHeader></LayoutHeader>
+        <LayoutPreloader></LayoutPreloader>
+        <LayoutNotifications></LayoutNotifications>
+        <div className="outlet">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={LoginContainer}
+            ></Route>
+            <Route
+              path="/contacts"
+              component={DashboardContainer}
+            ></Route>
+            <Route path="*">
+              <Redirect to="/"></Redirect>
+            </Route>
+          </Switch>
+        </div>
+      </section>
+    );
+  }
 
-	public componentDidMount(): void {
-		$auth.checkAuth().then((isAuth) => {
-			if (isAuth) {
-				const action = new SetAuthStatusAction('authorized');
-				this.props.dispatch(action);
-				$notifications.setTitle('Login');
-			} else {
-				const action = new SetAuthStatusAction('unauthorized');
-				this.props.dispatch(action);
-				$notifications.setTitle('Dashboard');
-			}
-		});
-	}
+  public componentDidMount(): void {
+    $auth.checkAuth().then((isAuth) => {
+      if (isAuth) {
+        const action = new SetAuthStatusAction('authorized');
+        this.props.dispatch(action);
+        $notifications.setTitle('Login');
+      } else {
+        const action = new SetAuthStatusAction('unauthorized');
+        this.props.dispatch(action);
+        $notifications.setTitle('Dashboard');
+      }
+    });
+  }
 }
 
 export const LayoutContainer = utils.compose(InferableComponent)
-	.pipe(connect())
-	.result();
+  .pipe(connect())
+  .result();

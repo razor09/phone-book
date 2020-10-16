@@ -4,9 +4,9 @@ import { RootModule } from '../app/root/root.module';
 import { environment } from '../environments/environment';
 
 if (environment.production) {
-	enableProdMode();
+  enableProdMode();
 }
 
 platformBrowserDynamic()
-	.bootstrapModule(RootModule)
-	.catch(console.error);
+  .bootstrapModule(RootModule)
+  .catch(console.error);

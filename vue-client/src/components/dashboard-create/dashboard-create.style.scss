@@ -1,38 +1,37 @@
 @import 'src/assets/themes/options';
 
 #dashboard-create {
-	form {
-		margin-top: 30px;
+  form {
+    margin-top: 30px;
 
-		.form-row {
-			display: flex;
-			justify-content: space-between;
+    .form-row {
+      display: flex;
+      justify-content: space-between;
 
-			.form-row-column {
-				display: flex;
-				position: relative;
-				width: 45%;
+      .form-row-column {
+        display: flex;
+        position: relative;
+        width: 45%;
 
-				input {
-					width: 100%;
-					margin: 15px 0;
-				}
-			}
-		}
+        input {
+          width: 100%;
+          margin: 15px 0;
+        }
+      }
+    }
 
-		.button-group {
-			display: flex;
+    .button-group {
+      display: flex;
 
-			button {
+      button {
+        &[type='submit'] {
+          background: $darkgreen;
+        }
 
-				&[type='submit'] {
-					background: $darkgreen;
-				}
-
-				&[type='button'] {
-					background: $darkred;
-				}
-			}
-		}
-	}
+        &[type='button'] {
+          background: $darkred;
+        }
+      }
+    }
+  }
 }

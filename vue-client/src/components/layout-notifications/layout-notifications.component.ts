@@ -5,11 +5,11 @@ import { Notification } from '../../models';
 import { $store } from '../../store';
 
 @Component({
-	template: files.insert('layout-notifications'),
+  template: files.insert('layout-notifications'),
 })
 export class LayoutNotifications extends Vue {
 
-	public get notifications(): Notification[] {
-		return $store.notifications;
-	}
+  public get notifications(): Notification[] {
+    return $store.notifications;
+  }
 }

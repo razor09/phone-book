@@ -7,16 +7,16 @@ import { LayoutNotifications } from '../layout-notifications/layout-notification
 import { LayoutPreloader } from '../layout-preloader/layout-preloader.component';
 
 @Component({
-	template: files.insert('layout-container'),
-	components: {
-		'layout-header': LayoutHeader,
-		'layout-preloader': LayoutPreloader,
-		'layout-notifications': LayoutNotifications,
-	},
+  template: files.insert('layout-container'),
+  components: {
+    'layout-header': LayoutHeader,
+    'layout-preloader': LayoutPreloader,
+    'layout-notifications': LayoutNotifications,
+  },
 })
 export class LayoutContainer extends Vue {
 
-	public get display(): boolean {
-		return !$store.isError;
-	}
+  public get display(): boolean {
+    return !$store.isError;
+  }
 }

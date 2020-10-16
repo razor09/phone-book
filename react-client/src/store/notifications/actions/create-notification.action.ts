@@ -5,16 +5,16 @@ import { NotificationState } from '../notifications.state';
 
 export class CreateNotificationAction implements GlobalAction<NotificationsActionKeys, Notification, NotificationState> {
 
-	public type = NotificationsActionKeys.CreateNotification;
+  public type = NotificationsActionKeys.CreateNotification;
 
-	constructor(public payload: Notification) {
-		return utils.toPlainObject(this);
-	}
+  constructor(public payload: Notification) {
+    return utils.toPlainObject(this);
+  }
 
-	public reduce(state: NotificationState): NotificationState {
-		return {
-			...state,
-			notifications: [...state.notifications, this.payload],
-		};
-	}
+  public reduce(state: NotificationState): NotificationState {
+    return {
+      ...state,
+      notifications: [...state.notifications, this.payload],
+    };
+  }
 }

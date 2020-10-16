@@ -4,13 +4,13 @@ import { pipes } from '../pipes';
 import { core } from './root.core';
 
 @NgModule({
-	imports: [
-		...core,
-	],
-	declarations: [
-		...components,
-		...pipes,
-	],
-	bootstrap: [root],
+  imports: [
+    ...core,
+  ],
+  declarations: [
+    ...components,
+    ...pipes,
+  ],
+  bootstrap: [root],
 })
 export class RootModule {}

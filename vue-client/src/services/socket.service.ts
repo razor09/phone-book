@@ -3,7 +3,7 @@ import { Config } from '../models';
 
 class SockerService {
 
-	public client = io(Config.SocketBaseUrl);
+  public client = io(Config.SocketBaseUrl);
 }
 
 export const $socket = new SockerService();

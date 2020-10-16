@@ -1,22 +1,22 @@
 <section id="dashboard-list">
-	<div class="search">
-		<input
-			type="text"
-			placeholder="Search"
-			v-model="query"
-			@input="search"
-		>
-		<i class="fa fa-search fa-2x"></i>
-		<label class="placeholder">Search</label>
-	</div>
-	<dashboard-create></dashboard-create>
-	<div class="table">
-		<transition-group name="list">
-			<dashboard-contact
-				v-for="contact in contacts"
-				:key="contact.id"
-				:contact="contact"
-			></dashboard-contact>
-		</transition-group>
-	</div>
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Search"
+      v-model="query"
+      @input="search"
+    >
+    <i class="fa fa-search fa-2x"></i>
+    <label class="placeholder">Search</label>
+  </div>
+  <dashboard-create></dashboard-create>
+  <div class="table">
+    <transition-group name="list">
+      <dashboard-contact
+        v-for="contact in contacts"
+        :key="contact.id"
+        :contact="contact"
+      ></dashboard-contact>
+    </transition-group>
+  </div>
 </section>

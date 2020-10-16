@@ -1,7 +1,7 @@
 export const enum NetworkActionKeys {
-	SetProgress = 'NetworkActionKeys -> SetProgress',
+  SetProgress = 'NetworkActionKeys -> SetProgress',
 };
 
 export const networkActionKeys = [
-	NetworkActionKeys.SetProgress,
+  NetworkActionKeys.SetProgress,
 ];

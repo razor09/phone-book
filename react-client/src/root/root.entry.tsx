@@ -6,16 +6,16 @@ import { LayoutContainer } from '../components/layout-container/layout-container
 import { store } from '../store/global.reducer';
 
 export const Entry = (): JSX.Element => {
-	return (
-		<Provider store={store}>
-			<BrowserRouter>
-				<Switch>
-					<Route
-						path="/"
-						component={LayoutContainer}
-					></Route>
-				</Switch>
-			</BrowserRouter>
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path="/"
+            component={LayoutContainer}
+          ></Route>
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+  );
 }

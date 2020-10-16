@@ -11,11 +11,11 @@ export type DebounceFactory = () => void;
 export type EitherAction<S> = GlobalAction<never, never, S>;
 
 export interface GlobalAction<T, P, S> extends Action<T> {
-	payload: P;
-	reduce: (state: S) => S;
+  payload: P;
+  reduce: (state: S) => S;
 }
 
 export interface Pipe<T> {
-	pipe: <R>(callback: (value: T) => R) => Pipe<R>;
-	result: () => T;
+  pipe: <R>(callback: (value: T) => R) => Pipe<R>;
+  result: () => T;
 }

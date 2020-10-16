@@ -1,36 +1,36 @@
 @import 'src/assets/themes/options';
 
 form {
-	margin: 30px 0;
+  margin: 30px 0;
 
-	.form-row {
-		display: flex;
-		justify-content: space-between;
-		margin: 10px 0;
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
 
-		.row-column {
-			display: flex;
-			position: relative;
-			width: 45%;
+    .row-column {
+      display: flex;
+      position: relative;
+      width: 45%;
 
-			input {
-				width: 100%;
-				margin: 15px 0;
-			}
-		}
-	}
+      input {
+        width: 100%;
+        margin: 15px 0;
+      }
+    }
+  }
 
-	.button-group {
-		display: flex;
+  .button-group {
+    display: flex;
 
-		button[type='submit'] {
-			background: $darkgreen;
-			width: 20%;
-		}
+    button[type='submit'] {
+      background: $darkgreen;
+      width: 20%;
+    }
 
-		button[type='reset'] {
-			background: $darkred;
-			width: 25%;
-		}
-	}
+    button[type='reset'] {
+      background: $darkred;
+      width: 25%;
+    }
+  }
 }

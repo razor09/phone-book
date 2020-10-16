@@ -4,10 +4,10 @@ import { $store } from '../store';
 import { router } from './root.router';
 
 Vue.nextTick(() => {
-	new Vue({
-		el: '#root',
-		template: files.root(),
-		data: { $store },
-		router,
-	});
+  new Vue({
+    el: '#root',
+    template: files.root(),
+    data: { $store },
+    router,
+  });
 });

@@ -5,16 +5,16 @@ import { NetworkState } from '../network.state';
 
 export class SetProgressAction implements GlobalAction<NetworkActionKeys, boolean, NetworkState> {
 
-	public type = NetworkActionKeys.SetProgress;
+  public type = NetworkActionKeys.SetProgress;
 
-	constructor(public payload: boolean) {
-		return utils.toPlainObject(this);
-	}
+  constructor(public payload: boolean) {
+    return utils.toPlainObject(this);
+  }
 
-	public reduce(state: NetworkState): NetworkState {
-		return {
-			...state,
-			inProgress: this.payload,
-		};
-	}
+  public reduce(state: NetworkState): NetworkState {
+    return {
+      ...state,
+      inProgress: this.payload,
+    };
+  }
 }

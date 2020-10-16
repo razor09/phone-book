@@ -1,13 +1,13 @@
 <header id="layout-header">
-	<div class="title">
-		<i class="fa fa-code"></i>
-		<span>{{ title }}</span>
-	</div>
-	<button
-		v-if="isAuth"
-		@click="logout()"
-	>
-		<i class="fa fa-sign-out"></i>
-		<span>Logout</span>
-	</button>
+  <div class="title">
+    <i class="fa fa-code"></i>
+    <span>{{ title }}</span>
+  </div>
+  <button
+    v-if="isAuth"
+    @click="logout()"
+  >
+    <i class="fa fa-sign-out"></i>
+    <span>Logout</span>
+  </button>
 </header>

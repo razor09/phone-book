@@ -1,17 +1,17 @@
 <header>
-	<div
-		class="label"
-		[style.color]="store.color"
-	>
-		<i class="fa fa-code"></i>
-		<span>{{ store.text }}</span>
-	</div>
-	<button
-		type="button"
-		*ngIf="store.isAuth"
-		(click)="logout()"
-	>
-		<i class="fa fa-sign-out"></i>
-		<span>Logout</span>
-	</button>
+  <div
+    class="label"
+    [style.color]="store.color"
+  >
+    <i class="fa fa-code"></i>
+    <span>{{ store.text }}</span>
+  </div>
+  <button
+    type="button"
+    *ngIf="store.isAuth"
+    (click)="logout()"
+  >
+    <i class="fa fa-sign-out"></i>
+    <span>Logout</span>
+  </button>
 </header>

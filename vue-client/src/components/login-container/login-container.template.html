@@ -1,31 +1,31 @@
 <section id="login-container">
-	<form
-		ref="formRef"
-		@submit.prevent="login()"
-	>
-		<div class="form-row">
-			<input
-				type="text"
-				placeholder="User"
-				v-model="auth.user"
-			>
-			<i class="fa fa-user-secret fa-2x"></i>
-			<label class="placeholder">User</label>
-		</div>
-		<div class="form-row">
-			<input
-				type="password"
-				placeholder="Password"
-				v-model="auth.password"
-			>
-			<i class="fa fa-key fa-2x"></i>
-			<label class="placeholder">Password</label>
-		</div>
-		<div class="form-row">
-			<button type="submit">
-				<i class="fa fa-lock"></i>
-				<span>Login</span>
-			</button>
-		</div>
-	</form>
+  <form
+    ref="formRef"
+    @submit.prevent="login()"
+  >
+    <div class="form-row">
+      <input
+        type="text"
+        placeholder="User"
+        v-model="auth.user"
+      >
+      <i class="fa fa-user-secret fa-2x"></i>
+      <label class="placeholder">User</label>
+    </div>
+    <div class="form-row">
+      <input
+        type="password"
+        placeholder="Password"
+        v-model="auth.password"
+      >
+      <i class="fa fa-key fa-2x"></i>
+      <label class="placeholder">Password</label>
+    </div>
+    <div class="form-row">
+      <button type="submit">
+        <i class="fa fa-lock"></i>
+        <span>Login</span>
+      </button>
+    </div>
+  </form>
 </section>

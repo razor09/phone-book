@@ -1,29 +1,29 @@
 @import 'src/assets/themes/options';
 
 :host {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
 
-	.row-column {
-		display: flex;
-		width: 25%;
-		font-size: 16px;
-	}
+  .row-column {
+    display: flex;
+    width: 25%;
+    font-size: 16px;
+  }
 
-	.button-group {
-		display: flex;
-		width: 45%;
+  .button-group {
+    display: flex;
+    width: 45%;
 
-		button[type='button'].edit-button {
-			width: 40%;
-			background: $darkorange;
-		}
+    .edit-button {
+      width: 40%;
+      background: $darkorange;
+    }
 
-		button[type='button'].remove-button {
-			width: 60%;
-			background: $darkred;
-		}
-	}
+    .remove-button {
+      width: 60%;
+      background: $darkred;
+    }
+  }
 }

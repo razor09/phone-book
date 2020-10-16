@@ -5,10 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RootRouting } from './root.routing';
 
 export const core = [
-	BrowserModule,
-	BrowserAnimationsModule,
-	FormsModule,
-	ReactiveFormsModule,
-	HttpClientModule,
-	RootRouting,
+  BrowserModule,
+  BrowserAnimationsModule,
+  FormsModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  RootRouting,
 ];

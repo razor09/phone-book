@@ -4,16 +4,16 @@ import { Observable, throwError } from 'rxjs';
 import { Store } from '../store';
 
 @Injectable({
-	providedIn: 'root',
+  providedIn: 'root',
 })
 export class FailService {
 
-	constructor(
-		private store: Store,
-	) {}
+  constructor(
+    private store: Store,
+  ) {}
 
-	public throw(response: HttpErrorResponse): Observable<never> {
-		this.store.broken();
-		return throwError(response);
-	}
+  public throw(response: HttpErrorResponse): Observable<never> {
+    this.store.broken();
+    return throwError(response);
+  }
 }

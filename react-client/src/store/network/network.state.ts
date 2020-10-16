@@ -1,3 +1,3 @@
 export interface NetworkState {
-	inProgress: boolean;
+  inProgress: boolean;
 }

@@ -1,10 +1,10 @@
 <section id="layout-notifications">
-	<transition-group name="notification">
-		<div
-			class="notification"
-			v-for="notification in notifications"
-			:key="notification.id"
-			:style="{ color: notification.color }"
-		>{{ notification.text }}</div>
-	</transition-group>
+  <transition-group name="notification">
+    <div
+      class="notification"
+      v-for="notification in notifications"
+      :key="notification.id"
+      :style="{ color: notification.color }"
+    >{{ notification.text }}</div>
+  </transition-group>
 </section>

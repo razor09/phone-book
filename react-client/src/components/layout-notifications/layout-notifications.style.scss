@@ -1,20 +1,20 @@
 @import 'src/assets/themes/options';
 
 #layout-notifications {
-	position: fixed;
-	z-index: 1;
-	top: 60px;
-	right: 0;
-	padding: 0 15px;
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  right: 0;
+  padding: 0 15px;
 
-	.notification {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 200px;
-		height: 40px;
-		margin: 20px 0;
-		background: $silver;
-		box-shadow: $shadow;
-	}
+  .notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    margin: 20px 0;
+    background: $silver;
+    box-shadow: $shadow;
+  }
 }

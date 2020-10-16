@@ -6,19 +6,19 @@ import { RemoveNotificationAction } from '../store/notifications/actions/remove-
 
 export class NotificationsService {
 
-	public setTitle(title: Title): void {
-		self.document.title = title;
-	}
+  public setTitle(title: Title): void {
+    self.document.title = title;
+  }
 
-	public push(text: Text, color: Color): void {
-		const id = Symbol();
-		const createAction = new CreateNotificationAction({ id, text, color });
-		store.dispatch(createAction);
-		utils.delay(() => {
-			const removeAction = new RemoveNotificationAction(id);
-			store.dispatch(removeAction);
-		});
-	}
+  public push(text: Text, color: Color): void {
+    const id = Symbol();
+    const createAction = new CreateNotificationAction({ id, text, color });
+    store.dispatch(createAction);
+    utils.delay(() => {
+      const removeAction = new RemoveNotificationAction(id);
+      store.dispatch(removeAction);
+    });
+  }
 }
 
 export const $notifications = new NotificationsService();

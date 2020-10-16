@@ -1,16 +1,16 @@
 @import 'src/assets/themes/options';
 
 .search {
-	display: flex;
-	position: relative;
+  display: flex;
+  position: relative;
 
-	input {
-		width: 100%;
-		margin: 15px 0;
-	}
+  input {
+    width: 100%;
+    margin: 15px 0;
+  }
 }
 
 .table {
-	height: 240px;
-	overflow: auto;
+  height: 240px;
+  overflow: auto;
 }

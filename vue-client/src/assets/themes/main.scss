@@ -1,75 +1,78 @@
 @import 'src/assets/themes/options';
 
 button {
-	cursor: pointer;
-	outline: 0;
-	border: 0;
-	font-family: 'Roboto';
-	font-size: 18px;
-	color: $black;
-	padding: 10px 25px;
-	opacity: 1;
-	transition: opacity $fast;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  font-family: 'Roboto';
+  font-size: 18px;
+  color: $black;
+  padding: 10px 25px;
+  opacity: 1;
+  transition: opacity $fast;
 
-	&:hover {
-		opacity: .8;
-		transition: opacity $fast;
-	}
+  &:hover {
+    opacity: 0.8;
+    transition: opacity $fast;
+  }
 
-	&:link, &:visited, &:active, &:focus {
-		outline: 0;
-	}
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
 
-	&::-moz-focus-inner {
-		border: 0;
-	}
+  &::-moz-focus-inner {
+    border: 0;
+  }
 
-	i {
-		margin-right: 5px;
-	}
+  i {
+    margin-right: 5px;
+  }
 }
 
 input[type='text'],
 input[type='password'] {
-	font-size: 18px;
-	outline: 0;
-	border: 0;
-	height: 20px;
-	padding: 15px 10px 15px 60px;
-	border-bottom: 2px solid $black;
-	color: $black;
-	background: inherit;
-	transition: border-bottom $fast;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  height: 20px;
+  padding: 15px 10px 15px 60px;
+  border-bottom: 2px solid $black;
+  color: $black;
+  background: inherit;
+  transition: border-bottom $fast;
 
-	~ i.fa {
-		position: absolute;
-		top: 20px;
-		left: 15px;
-		color: $black;
-	}
-	
-	~ label.placeholder {
-		position: absolute;
-		left: 60px;
-		top: 30px;
-		font-size: 18px;
-		pointer-events: none;
-		transition: all $fast ease;
-	}
+  ~ i.fa {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    color: $black;
+  }
 
-	&::placeholder {
-		color: transparent;
-	}
-	
-	&:focus ~ label.placeholder,
-	&:not(:placeholder-shown) ~ label.placeholder {
-		top: 8px;
-		font-size: 16px;
-		color: $darkslategray;
-	}
+  ~ label.placeholder {
+    position: absolute;
+    left: 60px;
+    top: 30px;
+    font-size: 18px;
+    pointer-events: none;
+    transition: all $fast ease;
+  }
 
-	&:focus {
-		border-bottom: 2px solid $darkorange;
-		transition: border-bottom $fast;
-	}
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:focus ~ label.placeholder,
+  &:not(:placeholder-shown) ~ label.placeholder {
+    top: 8px;
+    font-size: 16px;
+    color: $darkslategray;
+  }
+
+  &:focus {
+    border-bottom: 2px solid $darkorange;
+    transition: border-bottom $fast;
+  }
 }

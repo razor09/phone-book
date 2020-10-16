@@ -7,6 +7,6 @@ export type Reject<T> = (reason?: T) => void;
 export type DebounceFactory = () => void;
 
 export interface Pipe<T> {
-	pipe: <R>(callback: (value: T) => R) => Pipe<R>;
-	result: () => T;
+  pipe: <R>(callback: (value: T) => R) => Pipe<R>;
+  result: () => T;
 }

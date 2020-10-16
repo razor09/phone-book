@@ -1,7 +1,7 @@
 export const enum AuthActionKeys {
-	SetAuthStatus = 'AuthActionKeys -> SetAuthStatus',
+  SetAuthStatus = 'AuthActionKeys -> SetAuthStatus',
 };
 
 export const authActionKeys = [
-	AuthActionKeys.SetAuthStatus,
+  AuthActionKeys.SetAuthStatus,
 ];
