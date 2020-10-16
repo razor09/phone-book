@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { utils } from '../../libs';
 import { Contact } from '../../models';
@@ -10,7 +9,7 @@ interface SelfProps {
   contact: Contact;
 }
 
-type Props = SelfProps & RouteComponentProps & DispatchProp;
+type Props = SelfProps & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
 
@@ -54,5 +53,4 @@ class InferableComponent extends React.Component<Props> {
 
 export const DashboardContact = utils.compose(InferableComponent)
   .pipe(withRouter)
-  .pipe(connect())
   .result();

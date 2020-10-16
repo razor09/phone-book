@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { utils } from '../../libs';
@@ -14,9 +13,9 @@ interface State {
   registry: Contact[];
 }
 
-type Props = RouteComponentProps & DispatchProp;
+type Props = RouteComponentProps;
 
-class InferableComponent extends React.Component<Props, State> {
+export class DashboardList extends React.Component<Props, State> {
 
   private inputRef = React.createRef<HTMLInputElement>();
 
@@ -93,7 +92,3 @@ class InferableComponent extends React.Component<Props, State> {
     this.setState({ contacts });
   }
 }
-
-export const DashboardList = utils.compose(InferableComponent)
-  .pipe(connect())
-  .result();

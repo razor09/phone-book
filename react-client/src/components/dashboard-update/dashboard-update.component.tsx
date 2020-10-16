@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { DispatchProp } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { utils } from '../../libs';
 import { Contact } from '../../models';
@@ -12,7 +11,7 @@ interface Params {
 
 type State = Contact;
 
-type Props = RouteComponentProps<Params> & DispatchProp;
+type Props = RouteComponentProps<Params>;
 
 class InferableComponent extends React.Component<Props, State> {
 

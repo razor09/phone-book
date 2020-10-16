@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
 import { utils } from '../../libs';
 import { Contact } from '../../models';
 import { $contact, $notifications } from '../../services';
@@ -7,9 +6,7 @@ import './dashboard-create.style';
 
 type State = Contact;
 
-type Props = DispatchProp;
-
-class InferableComponent extends React.Component<Props, State> {
+export class DashboardCreate extends React.Component<object, State> {
 
   private formRef = React.createRef<HTMLFormElement>();
 
@@ -94,7 +91,3 @@ class InferableComponent extends React.Component<Props, State> {
     }
   }
 }
-
-export const DashboardCreate = utils.compose(InferableComponent)
-  .pipe(connect())
-  .result();
