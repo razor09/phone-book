@@ -16,8 +16,8 @@ class InferableComponent extends React.Component<Props, State> {
   private formRef = React.createRef<HTMLFormElement>();
 
   public state: State = {
-    user: null,
-    password: null,
+    user: '',
+    password: '',
   };
 
   private get isEmpty(): boolean {
@@ -35,7 +35,7 @@ class InferableComponent extends React.Component<Props, State> {
             <input
               type="text"
               placeholder="User"
-              onInput={this.handleInputChange.bind(this, 'user')}
+              onChange={this.handleInputChange.bind(this, 'user')}
             ></input>
             <i className="fa fa-user-secret fa-2x"></i>
             <label className="placeholder">User</label>
@@ -44,7 +44,7 @@ class InferableComponent extends React.Component<Props, State> {
             <input
               type="password"
               placeholder="Password"
-              onInput={this.handleInputChange.bind(this, 'password')}
+              onChange={this.handleInputChange.bind(this, 'password')}
             ></input>
             <i className="fa fa-key fa-2x"></i>
             <label className="placeholder">Password</label>

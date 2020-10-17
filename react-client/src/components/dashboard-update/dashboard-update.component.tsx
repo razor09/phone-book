@@ -40,7 +40,7 @@ class InferableComponent extends React.Component<Props, State> {
               <input
                 type="text"
                 placeholder="Name"
-                onInput={this.handleInputChange.bind(this, 'name')}
+                onChange={this.handleInputChange.bind(this, 'name')}
                 value={name}
               ></input>
               <i className="fa fa-user fa-2x"></i>
@@ -50,7 +50,7 @@ class InferableComponent extends React.Component<Props, State> {
               <input
                 type="text"
                 placeholder="Number"
-                onInput={this.handleInputChange.bind(this, 'number')}
+                onChange={this.handleInputChange.bind(this, 'number')}
                 value={number}
               ></input>
               <i className="fa fa-phone fa-2x"></i>

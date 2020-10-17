@@ -50,9 +50,9 @@ class Utils {
   }
 
   public resetForm(form: HTMLFormElement): void {
-    form.reset();
     Array.from(form.elements).forEach((element) => {
       if (element instanceof HTMLInputElement) {
+        element.value = '';
         element.blur();
       }
     });
