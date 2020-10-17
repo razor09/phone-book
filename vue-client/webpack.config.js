@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: path.resolve('src/root/root.module.ts'),
@@ -13,10 +12,10 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
     },
-    extensions: ['.html', '.scss', '.js', '.ts'],
+    extensions: ['.js', '.ts', '.scss', '.html'],
   },
   stats: {
-    warnings: false,
+    colors: true,
   },
   module: {
     rules: [
@@ -57,14 +56,11 @@ module.exports = {
     host: 'localhost',
     port: 4200,
     contentBase: path.resolve('dist'),
-    disableHostCheck: true,
     historyApiFallback: true,
-    inline: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'bundle.min.css',
     }),
-    new OptimizeCSSAssetsPlugin(),
   ],
 };
