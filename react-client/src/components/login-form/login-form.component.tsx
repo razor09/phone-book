@@ -35,7 +35,7 @@ class InferableComponent extends React.Component<Props, State> {
             <input
               type="text"
               placeholder="User"
-              onChange={this.handleInputChange.bind(this, 'user')}
+              onInput={this.handleInputChange.bind(this, 'user')}
             ></input>
             <i className="fa fa-user-secret fa-2x"></i>
             <label className="placeholder">User</label>
@@ -44,7 +44,7 @@ class InferableComponent extends React.Component<Props, State> {
             <input
               type="password"
               placeholder="Password"
-              onChange={this.handleInputChange.bind(this, 'password')}
+              onInput={this.handleInputChange.bind(this, 'password')}
             ></input>
             <i className="fa fa-key fa-2x"></i>
             <label className="placeholder">Password</label>

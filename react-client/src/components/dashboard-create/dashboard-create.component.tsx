@@ -31,7 +31,7 @@ export class DashboardCreate extends React.Component<object, State> {
               <input
                 type="text"
                 placeholder="Name"
-                onChange={this.handleInputChange.bind(this, 'name')}
+                onInput={this.handleInputChange.bind(this, 'name')}
               ></input>
               <i className="fa fa-user fa-2x"></i>
               <label className="placeholder">Name</label>
@@ -40,7 +40,7 @@ export class DashboardCreate extends React.Component<object, State> {
               <input
                 type="text"
                 placeholder="Number"
-                onChange={this.handleInputChange.bind(this, 'number')}
+                onInput={this.handleInputChange.bind(this, 'number')}
               ></input>
               <i className="fa fa-phone fa-2x"></i>
               <label className="placeholder">Number</label>
