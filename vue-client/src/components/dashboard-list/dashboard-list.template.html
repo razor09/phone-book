@@ -10,13 +10,11 @@
     <label class="placeholder">Search</label>
   </div>
   <dashboard-create></dashboard-create>
-  <div class="table">
-    <transition-group name="list">
-      <dashboard-contact
-        v-for="contact in contacts"
-        :key="contact.id"
-        :contact="contact"
-      ></dashboard-contact>
-    </transition-group>
-  </div>
+  <transition-group name="list">
+    <dashboard-contact
+      v-for="contact in contacts"
+      :key="contact.id"
+      :contact="contact"
+    ></dashboard-contact>
+  </transition-group>
 </section>

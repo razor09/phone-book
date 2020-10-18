@@ -3,7 +3,7 @@ export const enum NotificationsActionKeys {
   RemoveNotification = 'NotificationsActionKeys -> RemoveNotification',
 };
 
-export const notificationsActionKeys = [
+export const notificationsActionKeys: NotificationsActionKeys[] = [
   NotificationsActionKeys.CreateNotification,
   NotificationsActionKeys.RemoveNotification,
 ];
