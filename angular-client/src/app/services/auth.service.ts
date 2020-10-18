@@ -10,7 +10,7 @@ import { ApiService } from './api.service';
 export class AuthService {
 
   constructor(
-    private api: ApiService,
+    private $api: ApiService,
   ) {}
 
   public buildForm(): FormGroup {
@@ -21,14 +21,14 @@ export class AuthService {
   }
 
   public login(auth: Auth): Observable<boolean> {
-    return this.api.post<boolean>('login', auth);
+    return this.$api.post<boolean>('login', auth);
   }
 
   public checkAuth(): Observable<boolean> {
-    return this.api.get<boolean>('check');
+    return this.$api.get<boolean>('check');
   }
 
   public logout(): Observable<void> {
-    return this.api.delete<void>('logout');
+    return this.$api.delete<void>('logout');
   }
 }

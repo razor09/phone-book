@@ -10,7 +10,7 @@ import { ApiService } from './api.service';
 export class ContactService {
 
   constructor(
-    private api: ApiService,
+    private $api: ApiService,
   ) {}
 
   public buildForm(): FormGroup {
@@ -21,22 +21,22 @@ export class ContactService {
   }
 
   public receiveContacts(): Observable<Contact[]> {
-    return this.api.get<Contact[]>('contacts');
+    return this.$api.get<Contact[]>('contacts');
   }
 
   public receiveContact(id: number): Observable<Contact> {
-    return this.api.get<Contact>(`contacts/${id}`);
+    return this.$api.get<Contact>(`contacts/${id}`);
   }
 
   public createContact(contact: Contact): Observable<void> {
-    return this.api.post<void>('contacts', contact);
+    return this.$api.post<void>('contacts', contact);
   }
 
   public updateContact(id: number, contact: Contact): Observable<void> {
-    return this.api.put<void>(`contacts/${id}`, contact);
+    return this.$api.put<void>(`contacts/${id}`, contact);
   }
 
   public removeContact(id: number): Observable<void> {
-    return this.api.delete<void>(`contacts/${id}`);
+    return this.$api.delete<void>(`contacts/${id}`);
   }
 }

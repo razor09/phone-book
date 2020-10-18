@@ -15,20 +15,20 @@ export class DashboardList implements OnInit, OnDestroy {
 
   constructor(
     private $contact: ContactService,
-    private socket: SocketService,
+    private $socket: SocketService,
   ) {}
 
   public ngOnInit(): void {
     this.receiveContacts();
-    this.socket.client.on(Message.Create, this.receiveContacts.bind(this));
-    this.socket.client.on(Message.Update, this.receiveContacts.bind(this));
-    this.socket.client.on(Message.Remove, this.receiveContacts.bind(this));
+    this.$socket.client.on(Message.Create, this.receiveContacts.bind(this));
+    this.$socket.client.on(Message.Update, this.receiveContacts.bind(this));
+    this.$socket.client.on(Message.Remove, this.receiveContacts.bind(this));
   }
 
   public ngOnDestroy(): void {
-    this.socket.client.off(Message.Create);
-    this.socket.client.off(Message.Update);
-    this.socket.client.off(Message.Remove);
+    this.$socket.client.off(Message.Create);
+    this.$socket.client.off(Message.Update);
+    this.$socket.client.off(Message.Remove);
   }
 
   public trackById(_: number, contact: Contact): number {

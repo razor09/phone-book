@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first, map, switchMap } from 'rxjs/operators';
 import { Utils } from '../../libs';
@@ -10,6 +10,7 @@ import { Store } from '../../store';
   selector: 'dashboard-update',
   templateUrl: 'dashboard-update.component.html',
   styleUrls: ['dashboard-update.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardUpdate implements OnInit {
 

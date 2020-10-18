@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { Utils } from '../../libs';
 import { Contact } from '../../models';
@@ -9,6 +9,7 @@ import { Store } from '../../store';
   selector: 'dashboard-create',
   templateUrl: 'dashboard-create.component.html',
   styleUrls: ['dashboard-create.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardCreate {
 

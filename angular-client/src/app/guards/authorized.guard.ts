@@ -12,12 +12,12 @@ export class Authorized implements CanActivate {
 
   constructor(
     private router: Router,
-    private authService: AuthService,
+    private $auth: AuthService,
     private store: Store,
   ) {}
 
   public canActivate(): Observable<boolean> {
-    return this.authService.checkAuth().pipe(
+    return this.$auth.checkAuth().pipe(
       tap((isAuth) => {
         isAuth ? this.store.authorized() : this.router.navigateByUrl('');
       }),

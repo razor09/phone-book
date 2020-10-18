@@ -18,7 +18,7 @@ export class ApiService {
 
   constructor(
     private http: HttpClient,
-    private fail: FailService,
+    private $fail: FailService,
     private store: Store,
   ) {}
 
@@ -37,7 +37,7 @@ export class ApiService {
   private effect<T>(id: symbol): Effect<T> {
     return [
       tap(() => this.finish(id)),
-      catchError((response: HttpErrorResponse) => this.fail.throw(response)),
+      catchError((response: HttpErrorResponse) => this.$fail.throw(response)),
     ];
   }
 

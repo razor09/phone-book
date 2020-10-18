@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { Utils } from '../../libs';
@@ -10,6 +10,7 @@ import { Store } from '../../store';
   selector: 'login-container',
   templateUrl: 'login-container.component.html',
   styleUrls: ['login-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginContainer {
 
