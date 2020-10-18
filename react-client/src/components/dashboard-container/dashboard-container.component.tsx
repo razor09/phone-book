@@ -11,9 +11,9 @@ interface StateProps {
   status: AuthStatus;
 }
 
-type Props = StateProps & RouteComponentProps & DispatchProp;
+type Props = StateProps & DispatchProp & RouteComponentProps;
 
-export class InferableComponent extends React.Component<Props> {
+class InferableComponent extends React.Component<Props> {
 
   public render(): JSX.Element {
     const { status } = this.props;

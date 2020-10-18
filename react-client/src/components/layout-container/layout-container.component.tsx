@@ -11,7 +11,7 @@ import { LayoutPreloader } from '../layout-preloader/layout-preloader.component'
 import { LoginContainer } from '../login-container/login-container.component';
 import './layout-container.style';
 
-type Props = RouteComponentProps & DispatchProp;
+type Props = DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
 

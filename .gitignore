@@ -1,8 +1,8 @@
+/express-api/node_modules
+/express-api/dist
 /angular-client/node_modules
 /angular-client/dist
 /vue-client/node_modules
-/vue-client/dist/build
+/vue-client/dist
 /react-client/node_modules
-/react-client/dist/build
-/express-api/node_modules
-/express-api/dist
+/react-client/dist

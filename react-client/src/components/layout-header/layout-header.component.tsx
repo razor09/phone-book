@@ -13,7 +13,7 @@ interface StateProps {
   title: AuthTitle;
 }
 
-type Props = StateProps & RouteComponentProps & DispatchProp;
+type Props = StateProps & DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
 

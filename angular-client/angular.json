@@ -42,16 +42,16 @@
           "options": {
             "aot": true,
             "outputPath": "dist",
-            "index": "src/global/index.html",
-            "main": "src/global/main.ts",
-            "polyfills": "src/global/polyfills.ts",
+            "index": "src/public/index.html",
+            "main": "src/public/main.ts",
+            "polyfills": "src/public/polyfills.ts",
             "tsConfig": "tsconfig.json",
-            "styles": [
-              "node_modules/font-awesome/scss/font-awesome.scss",
-              "src/global/styles.scss"
-            ],
             "allowedCommonJsDependencies": [
               "socket.io-client"
+            ],
+            "styles": [
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "src/public/styles.scss"
             ]
           },
           "configurations": {

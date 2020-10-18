@@ -119,7 +119,7 @@ class InferableComponent extends React.Component<Props, State> {
       $notifications.push('Empty Fields', 'peru');
     } else {
       const { id, name, number } = this.state;
-      const contact = utils.removeTags({ name, number });
+      const contact = utils.removeTags<Contact>({ name, number });
       const operation = !!id ? $contact.updateContact(id, contact) : $contact.createContact(contact);
       operation.then(() => {
         this.clearSchema();

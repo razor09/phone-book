@@ -5,7 +5,7 @@
     "stop": "../express-api/node_modules/.bin/pm2 delete react-client",
     "launch": "node server.js",
     "dev": "webpack-dev-server --progress --mode=development",
-    "prod": "rm -rf dist/build && webpack --progress --mode=production",
+    "prod": "rm -rf dist && webpack --progress --mode=production",
     "update": "rm -rf node_modules && npm ci"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "@types/socket.io-client": "1.4.34",
     "css-loader": "5.0.0",
     "file-loader": "6.1.1",
+    "html-webpack-plugin": "4.5.0",
     "mini-css-extract-plugin": "1.0.0",
     "node-sass": "4.14.1",
     "sass-loader": "10.0.3",

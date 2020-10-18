@@ -1,12 +1,12 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve('src/root/root.main.tsx'),
+  entry: `${__dirname}/src/root/root.main.tsx`,
   output: {
-    path: path.resolve('dist/build'),
-    publicPath: path.join('/', 'build', '/'),
-    filename: 'bundle.min.js',
+    path: `${__dirname}/dist`,
+    publicPath: '',
+    filename: '[chunkhash].js',
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.scss'],
@@ -29,7 +29,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[hash].[ext]',
+            name: '[hash].[ext]',
           },
         },
       },
@@ -38,7 +38,7 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            name: 'fonts/[hash].[ext]',
+            name: '[hash].[ext]',
             limit: 10000,
           },
         },
@@ -48,12 +48,15 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 4400,
-    contentBase: path.resolve('dist'),
+    contentBase: 'dist',
     historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'bundle.min.css',
+      filename: '[chunkhash].css',
+    }),
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
     }),
   ],
 };

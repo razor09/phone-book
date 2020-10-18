@@ -4,6 +4,8 @@ down: react-client-down vue-client-down angular-client-down express-api-down dat
 on: database-up express-api-on angular-client-on vue-client-on react-client-on
 off: react-client-off vue-client-off angular-client-off express-api-off database-down
 
+server: database-up express-api-on
+
 database-up:
 	docker-compose up -d database
 database-down:

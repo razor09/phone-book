@@ -14,7 +14,7 @@
     ]
   },
   "files": [
-    "src/global/main.ts",
-    "src/global/polyfills.ts"
+    "src/public/main.ts",
+    "src/public/polyfills.ts"
   ]
 }

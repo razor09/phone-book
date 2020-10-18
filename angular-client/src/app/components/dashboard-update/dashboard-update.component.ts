@@ -37,7 +37,7 @@ export class DashboardUpdate implements OnInit {
       switchMap((id) => this.$contact.receiveContact(id)),
       first(),
     ).subscribe((contact) => {
-      if (contact) {
+      if (!!contact) {
         const { id, name, number } = contact;
         this.id = id;
         this.editForm.patchValue({ name, number });

@@ -9,7 +9,7 @@ import './login-form.style';
 
 type State = Auth;
 
-type Props = RouteComponentProps & DispatchProp;
+type Props = DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props, State> {
 
