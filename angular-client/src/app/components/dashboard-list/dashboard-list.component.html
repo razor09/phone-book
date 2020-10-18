@@ -1,7 +1,6 @@
 <div class="search">
   <input
     type="text"
-    name="query"
     placeholder="Search"
     [(ngModel)]="query"
   >
@@ -9,9 +8,7 @@
   <label class="placeholder">Search</label>
 </div>
 <dashboard-create></dashboard-create>
-<div class="table">
-  <dashboard-contact
-    *ngFor="let contact of contacts | search: query; trackBy: trackById"
-    [contact]="contact"
-  ></dashboard-contact>
-</div>
+<dashboard-contact
+  *ngFor="let contact of contacts | search: query; trackBy: trackById"
+  [contact]="contact"
+></dashboard-contact>

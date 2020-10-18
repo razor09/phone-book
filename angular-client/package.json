@@ -4,7 +4,7 @@
     "start": "../express-api/node_modules/.bin/pm2 start server.js --name angular-client",
     "stop": "../express-api/node_modules/.bin/pm2 delete angular-client",
     "launch": "node server.js",
-    "dev": "ng serve --port=4000",
+    "dev": "ng serve",
     "prod": "ng build --prod",
     "update": "rm -rf node_modules && npm ci"
   },
