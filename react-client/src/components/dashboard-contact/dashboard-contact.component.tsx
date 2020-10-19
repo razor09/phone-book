@@ -3,7 +3,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { utils } from '../../libs';
 import { Contact } from '../../models';
 import { $contact, $notifications } from '../../services';
-import './dashboard-contact';
+import './dashboard-contact.style';
 
 interface SelfProps {
   contact: Contact;
