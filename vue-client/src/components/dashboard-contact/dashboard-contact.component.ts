@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { files } from '../../libs';
+import { Color, Text } from '../../models';
 import { $contact } from '../../services';
-import { $store } from '../../store';
+import { ActionKeys } from '../../store/actions/action-keys';
 
 @Component({
   template: files.insert('dashboard-contact'),
@@ -10,9 +11,13 @@ import { $store } from '../../store';
 })
 export class DashboardContact extends Vue {
 
+  private notify(text: Text, color: Color): void {
+    this.$store.dispatch(ActionKeys.Notify, { text, color });
+  }
+
   public removeContact(id: number): void {
     $contact.removeContact(id).then(() => {
-      $store.notify('Removed', 'firebrick');
+      this.notify('Removed', 'firebrick');
     });
   }
 }

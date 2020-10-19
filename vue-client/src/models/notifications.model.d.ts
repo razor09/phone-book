@@ -5,7 +5,7 @@ export type Text = 'Login Failed' | 'Welcome' | 'Bye' | 'Empty Fields' | 'Create
 export type Color = 'firebrick' | 'peru' | 'darkslategray';
 
 export interface Notification {
-  id: symbol;
+  id?: symbol;
   text: Text;
   color: Color;
 }

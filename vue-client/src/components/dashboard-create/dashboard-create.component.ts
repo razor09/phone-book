@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { files, utils } from '../../libs';
+import { Color, Text } from '../../models';
 import { $contact } from '../../services';
-import { $store } from '../../store';
+import { ActionKeys } from '../../store/actions/action-keys';
 
 @Component({
   template: files.insert('dashboard-create'),
@@ -16,15 +17,19 @@ export class DashboardCreate extends Vue {
     $contact.clearSchema(this.contact);
   }
 
+  private notify(text: Text, color: Color): void {
+    this.$store.dispatch(ActionKeys.Notify, { text, color });
+  }
+
   public createContact(): void {
     if (!this.contact.name || !this.contact.number) {
       this.clearSchema();
-      $store.notify('Empty Fields', 'peru');
+      this.notify('Empty Fields', 'peru');
     } else {
       const contact = utils.removeTags(this.contact);
       $contact.createContact(contact).then(() => {
         this.clearSchema();
-        $store.notify('Created', 'darkslategray');
+        this.notify('Created', 'darkslategray');
       });
     }
   }

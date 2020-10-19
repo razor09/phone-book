@@ -1,5 +1,6 @@
 import { Config, Reject, Resolve } from '../models';
-import { $store } from '../store';
+import { store } from '../store';
+import { MutationKeys } from '../store/mutations/mutation-keys';
 
 class ApiService {
 
@@ -8,13 +9,13 @@ class ApiService {
   private start(): symbol {
     const id = Symbol();
     this.requestIds.add(id);
-    $store.setProgress(!!this.requestIds.size);
+    store.commit(MutationKeys.SetProgress, !!this.requestIds.size);
     return id;
   }
 
   private finish(id: symbol): void {
     this.requestIds.delete(id);
-    $store.setProgress(!!this.requestIds.size);
+    store.commit(MutationKeys.SetProgress, !!this.requestIds.size);
   }
 
   private effect<T>(resolve: Resolve<T>, reject: Reject<XMLHttpRequest>, xhr: XMLHttpRequest): void {

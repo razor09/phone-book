@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { files, utils } from '../../libs';
+import { Color, Text } from '../../models';
 import { $contact } from '../../services';
-import { $store } from '../../store';
+import { ActionKeys } from '../../store/actions/action-keys';
 
 @Component({
   template: files.insert('dashboard-update'),
@@ -20,6 +21,10 @@ export class DashboardUpdate extends Vue {
     $contact.clearSchema(this.contact);
   }
 
+  private notify(text: Text, color: Color): void {
+    this.$store.dispatch(ActionKeys.Notify, { text, color });
+  }
+
   private receiveContact(): void {
     const id = utils.toInteger(this.$route.params.id);
     $contact.receiveContact(id).then((contact) => {
@@ -32,14 +37,14 @@ export class DashboardUpdate extends Vue {
   public updateContact(): void {
     if (!this.contact.name || !this.contact.number) {
       this.clearSchema();
-      $store.notify('Empty Fields', 'peru');
+      this.notify('Empty Fields', 'peru');
     } else {
       const { id, name, number } = this.contact;
       const contact = utils.removeTags({ name, number });
       const operation = !!id ? $contact.updateContact(id, contact) : $contact.createContact(contact);
       operation.then(() => {
         this.clearSchema();
-        $store.notify('Updated', 'darkslategray');
+        this.notify('Updated', 'darkslategray');
         this.$router.push('/contacts');
       });
     }
