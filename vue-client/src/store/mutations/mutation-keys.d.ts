@@ -4,6 +4,6 @@ export const enum MutationKeys {
   SetError = 'MutationKeys -> SetError',
   SetTitle = 'MutationKeys -> SetTitle',
   SetProgress = 'MutationKeys -> SetProgress',
-  CreateNotification = 'ActionKeys -> CreateNotification',
-  RemoveNotification = 'ActionKeys -> RemoveNotification',
+  CreateNotification = 'MutationKeys -> CreateNotification',
+  RemoveNotification = 'MutationKeys -> RemoveNotification',
 }
