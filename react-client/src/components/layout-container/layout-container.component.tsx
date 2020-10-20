@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { utils } from '../../libs';
 import { $auth, $notifications } from '../../services';
 import { SetAuthStatusAction } from '../../store/auth/actions/set-auth-status.action';
+import { adapter } from '../../store/global.reducer';
 import { DashboardContainer } from '../dashboard-container/dashboard-container.component';
 import { LayoutHeader } from '../layout-header/layout-header.component';
 import { LayoutNotifications } from '../layout-notifications/layout-notifications.component';
@@ -15,6 +16,10 @@ type Props = DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
 
+  private get path(): string {
+    return this.props.match.path;
+  }
+
   public render(): JSX.Element {
     return (
       <section id="layout-container">
@@ -25,15 +30,15 @@ class InferableComponent extends React.Component<Props> {
           <Switch>
             <Route
               exact
-              path="/"
+              path={this.path}
               component={LoginContainer}
             ></Route>
             <Route
-              path="/contacts"
+              path={`${this.path}contacts`}
               component={DashboardContainer}
             ></Route>
             <Route path="*">
-              <Redirect to="/"></Redirect>
+              <Redirect to={this.path}></Redirect>
             </Route>
           </Switch>
         </div>
@@ -57,5 +62,5 @@ class InferableComponent extends React.Component<Props> {
 }
 
 export const LayoutContainer = utils.compose(InferableComponent)
-  .pipe(connect())
+  .pipe(adapter())
   .result();

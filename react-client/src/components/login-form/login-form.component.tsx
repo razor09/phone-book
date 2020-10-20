@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { utils } from '../../libs';
 import { Auth } from '../../models';
 import { $auth, $notifications } from '../../services';
 import { SetAuthStatusAction } from '../../store/auth/actions/set-auth-status.action';
+import { adapter } from '../../store/global.reducer';
 import './login-form.style';
 
 type State = Auth;
@@ -100,5 +101,5 @@ class InferableComponent extends React.Component<Props, State> {
 
 export const LoginForm = utils.compose(InferableComponent)
   .pipe(withRouter)
-  .pipe(connect())
+  .pipe(adapter())
   .result();

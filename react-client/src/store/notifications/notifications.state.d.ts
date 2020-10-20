@@ -1,5 +1,5 @@
 import { Notification } from '../../models';
 
-export interface NotificationState {
+export interface NotificationsState {
   notifications: Notification[];
 }

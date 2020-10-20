@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { utils } from '../../libs';
 import { AuthStatus } from '../../store/auth/auth.state';
-import { GlobalState } from '../../store/global.state';
+import { adapter } from '../../store/global.reducer';
 import { DashboardList } from '../dashboard-list/dashboard-list.component';
 import { DashboardEdit } from '../dashboard-update/dashboard-update.component';
 
@@ -15,6 +15,10 @@ type Props = StateProps & DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
 
+  private get path(): string {
+    return this.props.match.path;
+  }
+
   public render(): JSX.Element {
     const { status } = this.props;
     switch (status) {
@@ -25,17 +29,16 @@ class InferableComponent extends React.Component<Props> {
   }
 
   private display(): JSX.Element {
-    const { path } = this.props.match;
     return (
       <Switch>
         <Route
           exact
-          path={path}
+          path={this.path}
           component={DashboardList}
         ></Route>
         <Route
           exact
-          path={`${path}/:id`}
+          path={`${this.path}/:id`}
           component={DashboardEdit}
         ></Route>
       </Switch>
@@ -50,7 +53,7 @@ class InferableComponent extends React.Component<Props> {
 }
 
 export const DashboardContainer = utils.compose(InferableComponent)
-  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+  .pipe(adapter<StateProps>((state) => {
     return {
       status: state.authReducer.status,
     };

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { utils } from '../../libs';
 import { $auth, $notifications } from '../../services';
 import { SetAuthStatusAction } from '../../store/auth/actions/set-auth-status.action';
 import { AuthStatus, AuthTitle } from '../../store/auth/auth.state';
-import { GlobalState } from '../../store/global.state';
+import { adapter } from '../../store/global.reducer';
 import './layout-header.style';
 
 interface StateProps {
@@ -55,7 +55,7 @@ class InferableComponent extends React.Component<Props> {
 
 export const LayoutHeader = utils.compose(InferableComponent)
   .pipe(withRouter)
-  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+  .pipe(adapter<StateProps>((state) => {
     return {
       status: state.authReducer.status,
       title: state.authReducer.title,

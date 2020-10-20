@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { utils } from '../../libs';
-import { GlobalState } from '../../store/global.state';
+import { adapter } from '../../store/global.reducer';
 import './layout-preloader.style';
 
 interface StateProps {
@@ -28,7 +28,7 @@ class InferableComponent extends React.Component<Props> {
 }
 
 export const LayoutPreloader = utils.compose(InferableComponent)
-  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+  .pipe(adapter<StateProps>((state) => {
     return {
       inProgress: state.networkReducer.inProgress,
     };

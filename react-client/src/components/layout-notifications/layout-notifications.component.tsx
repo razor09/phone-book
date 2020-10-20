@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { utils } from '../../libs';
 import { Notification } from '../../models';
-import { GlobalState } from '../../store/global.state';
+import { adapter } from '../../store/global.reducer';
 import './layout-notifications.style';
 
 interface StateProps {
@@ -44,7 +44,7 @@ class InferableComponent extends React.Component<Props> {
 }
 
 export const LayoutNotifications = utils.compose(InferableComponent)
-  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+  .pipe(adapter<StateProps>((state) => {
     return {
       notifications: state.notificationsReducer.notifications,
     };

@@ -1,9 +1,9 @@
 import { utils } from '../../../libs';
 import { GlobalAction, Notification } from '../../../models';
 import { NotificationsActionKeys } from '../notifications.action-keys';
-import { NotificationState } from '../notifications.state';
+import { NotificationsState } from '../notifications.state';
 
-export class CreateNotificationAction implements GlobalAction<NotificationsActionKeys, Notification, NotificationState> {
+export class CreateNotificationAction implements GlobalAction<NotificationsActionKeys, Notification, NotificationsState> {
 
   public type = NotificationsActionKeys.CreateNotification;
 
@@ -11,7 +11,7 @@ export class CreateNotificationAction implements GlobalAction<NotificationsActio
     return utils.toPlainObject(this);
   }
 
-  public reduce(state: NotificationState): NotificationState {
+  public reduce(state: NotificationsState): NotificationsState {
     return {
       ...state,
       notifications: [...state.notifications, this.payload],

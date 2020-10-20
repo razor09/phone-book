@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { connect, DispatchProp } from 'react-redux';
+import { DispatchProp } from 'react-redux';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { utils } from '../../libs';
 import { AuthStatus } from '../../store/auth/auth.state';
-import { GlobalState } from '../../store/global.state';
+import { adapter } from '../../store/global.reducer';
 import { LoginForm } from '../login-form/login-form.component';
 
 interface StateProps {
@@ -13,6 +13,10 @@ interface StateProps {
 type Props = StateProps & DispatchProp & RouteComponentProps;
 
 class InferableComponent extends React.Component<Props> {
+
+  private get path(): string {
+    return this.props.match.path;
+  }
 
   public render(): JSX.Element {
     const { status } = this.props;
@@ -31,13 +35,13 @@ class InferableComponent extends React.Component<Props> {
 
   private redirect(): JSX.Element {
     return (
-      <Redirect to="/contacts"></Redirect>
+      <Redirect to={`${this.path}contacts`}></Redirect>
     );
   }
 }
 
 export const LoginContainer = utils.compose(InferableComponent)
-  .pipe(connect<StateProps, object, object, GlobalState>((state) => {
+  .pipe(adapter<StateProps>((state) => {
     return {
       status: state.authReducer.status,
     };
