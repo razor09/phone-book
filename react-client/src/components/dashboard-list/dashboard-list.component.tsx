@@ -76,8 +76,10 @@ export class DashboardList extends React.Component<Props, State> {
 
   private receiveContacts(): void {
     $contact.receiveContacts().then((contacts) => {
-      this.setState({ contacts });
-      this.setState({ registry: contacts });
+      this.setState({
+        contacts,
+        registry: contacts,
+      });
     });
   }
 
